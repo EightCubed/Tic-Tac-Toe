@@ -8,7 +8,6 @@
 	height: 25rem;
 	margin: 0 auto;
     border-radius: 10px;
-	
 	display: grid;
 	grid-template: repeat(3, 1fr) / repeat(3, 1fr);
 }
@@ -19,9 +18,22 @@
     border-radius: 2px;
     font-family: Helvetica;
     font-weight: bold;
-    font-size: 4em;
+    font-size: 2.2em;
     display: flex;
+    background-color: #14bdac;
     justify-content: center;
     align-items: center;
     
+}
+
+.victory{
+    width: 100%;
+    background-color: #14bdac;
+    color: aliceblue;
+    text-align: center;
+    font-size: 4rem;
+}
+
+.reset{
+    font-size: 2rem;
 }
