@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { ADD_TURN, SET_WINNER } from '../store/actionTypes';
+import { ADD_TURN, SET_DRAW, SET_WINNER } from '../store/actionTypes';
 import { gameboard } from '../store/reducer';
 import RenderBoard from './board';
 import Victory from './victory';
@@ -17,6 +17,7 @@ function Game(){
     const box_7 = useSelector<gameboard>((state)=> state.board[2][0])
     const box_8 = useSelector<gameboard>((state)=> state.board[2][1])
     const box_9 = useSelector<gameboard>((state)=> state.board[2][2])
+    const turns = useSelector<gameboard,number>((state)=>state.turns)
 
     const winner = useSelector<gameboard>((state)=> state.winner)
     const current = useSelector<gameboard>((state)=> state.current)
@@ -33,7 +34,14 @@ function Game(){
 
     useEffect( ()=> {
         checkWin()
-    })
+        checkDraw()
+    },[turns])
+
+    function checkDraw(){
+        if(turns===9)
+            {console.log('draw')
+            dispatch({type:SET_DRAW})}
+    }
 
     function checkWin(){
         const box = [[box_1,box_2,box_3],[box_4,box_5,box_6],[box_7,box_8,box_9]]

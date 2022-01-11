@@ -30,6 +30,10 @@ export const boardReducer =  ( state:gameboard = initialState , action : Action 
             console.log(action.win + " wins!")
             return {...state}
         }
+        case "SET_DRAW" : {
+            state.winner = 3;
+            return {...state}
+        }
         default : return {...state}
     }
 }
