@@ -23,7 +23,10 @@
     background-color: #14bdac;
     justify-content: center;
     align-items: center;
-    
+}
+
+.box:hover {
+    cursor: pointer;
 }
 
 .victory{
