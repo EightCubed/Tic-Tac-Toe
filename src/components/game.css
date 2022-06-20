@@ -1,0 +1,19 @@
+.playing {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.turn {
+    display: flex;
+    padding-top: 30px;
+    justify-content: center;
+}
+
+.circle {
+    padding-left: 30px;
+}
+
+.cross {
+    padding-left: 10px;
+}

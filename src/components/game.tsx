@@ -4,6 +4,7 @@ import { ADD_TURN, SET_DRAW, SET_WINNER } from '../store/actionTypes';
 import { gameboard } from '../store/reducer';
 import RenderBoard from './board';
 import Victory from './victory';
+import './game.css';
 
 function Game(){
     const dispatch = useDispatch()
@@ -70,12 +71,18 @@ function Game(){
 
     return(
         <div>
-        {winner===0 ? <div><RenderBoard ClickFunction={AddPosition}/> Playing : {current ? <div>&#10060;</div> : <div>&#8413;</div> }</div> : null }
-        
-        <div className="victory">
-        { winner!==0 ? <Victory/> : null }
-        </div>
-        
+            <div className='playing'>
+                {winner===0 ? <div><RenderBoard ClickFunction={AddPosition}/> 
+                    <div className='turn'>
+                        Playing : {current ? <div className='cross'>&#10060;</div> : <div className='circle'>&#8413;</div> }
+                    </div> 
+                    </div>
+                    : null 
+                }
+            </div>
+            <div className="victory">
+            { winner!==0 ? <Victory/> : null }
+            </div>
         </div>
     );
 }
